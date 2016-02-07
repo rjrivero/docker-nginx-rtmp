@@ -79,7 +79,7 @@ rtmp {
         ping 30s;
         notify_method get;
 
-        # Everything else,m get from the config volume!
+        # Everything else, get from the config volume!
         include /opt/nginx/conf.d/*.conf;
     }
 }
@@ -90,11 +90,11 @@ Volumes
 
 The RTMP server may need a large storage space for temporary files, and to store recordings. This space should be provided as a volume, mounted at **/opt/rtmp**. The server is configured to store several kinds of temp files under this path:
 
-    - HTTP client-body temp files under /opt/rtmp/client_body,
-    - Proxy temp files under /opt/rtmp/proxy,
-    - FastCGI temp files under /opt/rtmp/fastcgi,
-    - Uwsgi temp files under /opt/rtmp/uwsgi,
-    - Scgi temp files under /opt/rtmp/scgi
+  - HTTP client-body temp files under /opt/rtmp/client_body,
+  - Proxy temp files under /opt/rtmp/proxy,
+  - FastCGI temp files under /opt/rtmp/fastcgi,
+  - Uwsgi temp files under /opt/rtmp/uwsgi,
+  - Scgi temp files under /opt/rtmp/scgi
 
 You must make the *rtmp* volume writable to the **nginx** user, which is UID 1000, gid 1000. Before mounting the volume, change ownership of the folder to this user:
 
